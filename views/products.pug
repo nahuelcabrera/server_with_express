@@ -1,0 +1,28 @@
+include ./partials/base.pug
+
+h1=title
+
+ul
+    each val in items
+        li=val.id
+            ul=val.name
+
+br
+
+h3 Add a new product.
+
+    form(action="/new-product" method="POST")
+        input(type="text" name="newItem" id="newItem")
+
+        button Add
+
+script.
+    const txtNewItem = document.getElementById('newItem');
+    txtNewItem.focus();
+p
+
+
+
+
+
+include ./partials/footer.pug
